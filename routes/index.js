@@ -7,13 +7,18 @@ router.get('/getlist', function (req, res) {
 })
 
 router.get('/convert', function (req, res) {
-    convert.convert(req.query.filename,function(x){res.send(x)})
+    convert.convert(req.query.filename)
+    res.send('OK');
 })
 
 router.get('/delfile', function (req, res) {
-    convert.delfile(req.query.filename,function(x){res.send(x)})
+    convert.delfile(req.query.filename)
+    res.send('OK')
 })
 
+router.get('/getstatus', function (req, res) {
+    res.send(convert.getStatus())
+});
 
 
 router.get('/', (req, res) => { res.render('index.ejs') })

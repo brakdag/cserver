@@ -14,6 +14,7 @@
 
 <body>
     <div class="container">
+    <div class="alert alert-primary" role="alert" id="out"></div>
         <div class="h1">cserver</div>
         <div class="row">
             <div class="col">
@@ -50,7 +51,20 @@
             }});
     }
 
+
+    function getStatus(){
+       $.ajax({
+            url: `/getstatus`,
+            success: function (result) {
+               $("#out").text(`${result}`)
+
+               }});   
+    }
+
+    setInterval(function(){getStatus()}, 5000);
+
     $(document).ready(function () {
+    getStatus();
         $.ajax({
             url: `/getlist`,
             success: function (result) {
@@ -61,6 +75,7 @@
         });
 
     });
+
 
     
 </script>

@@ -18,6 +18,5 @@ app.set('view engine', 'ejs')
  
 app.use('/', routes)
 app.listen(port, () => {
- //   console.log(boxen(` LAWIMET - IWIN  \n\n Servidor corriendo en: \n http://localhost:${port}`,{padding: 1, margin: 1, borderStyle: 'double',backgroundColor:'blue',borderColor:'green'}))
- console.log(`CSERVER \n\n Servidor corriendo en: \n http://localhost:${port}`)
+ console.log(`CSERVER Port:${port}`)
 })
