@@ -40,12 +40,22 @@
             }});
     }
 
+    function convertir(filename){
+        $.ajax({
+            url: `/convert?filename=${filename}`,
+            success: function (result) {
+                alert('convertido')
+                location.reload(); 
+            }});
+
+    }
+
     $(document).ready(function () {
         $.ajax({
             url: `/getlist`,
             success: function (result) {
                 for (var file of result) {
-                    $("#tabla").append(`<tr><td>${file}</td><td><a href="convert?filename=${encodeURI(file)}">convertir</a> |<button type="button" class="btn btn-danger" onclick="borrar('${encodeURI(file)}')">borrar</button></td></tr>`)
+                    $("#tabla").append(`<tr><td>${file}</td><td><button type="button" class="btn btn-outline-primary" onclick="convertir('${encodeURI(file)}')'">convertir</button> |<button type="button" class="btn btn-outline-danger" onclick="borrar('${encodeURI(file)}')">borrar</button></td></tr>`)
                 }
             }
         });
