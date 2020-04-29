@@ -44,7 +44,7 @@
             url: `/getlist`,
             success: function (result) {
                 for (var file of result) {
-                    $("#tabla").append(`<tr><td>${file}</td><td><a href="convert?filename=${encodeURI(file)}">convertir</a> |<button type="button" onclick=borrar('${encodeURI(file)}')">borrar</button></td></tr>`)
+                    $("#tabla").append(`<tr><td>${file}</td><td><a href="convert?filename=${encodeURI(file)}">convertir</a> |<button type="button" onclick="borrar('${encodeURI(file)}')">borrar</button></td></tr>`)
                 }
             }
         });
