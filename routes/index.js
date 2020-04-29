@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-
+const convert = require('../lib/convert')
 router.get('/getlist', function (req, res) {
-    res.send("");
+    convert.getlist(x=>res.send(x))
 });
 
 router.get('/', (req, res) => { res.render('index.ejs') })
