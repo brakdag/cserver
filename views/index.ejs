@@ -35,7 +35,7 @@
             url: `/getlist`,
             success: function (result) {
                 for (var file of result) {
-                    $("#tabla").append(`<tr><td>${file}</td><td><a href="convert?filename=${file}">convertir</a> |<a href="borrar?filename=${file}">borrar</td></tr>`)
+                    $("#tabla").append(`<tr><td>${file}</td><td><a href="convert?filename=${file}">convertir</a> |<a href="delfile?filename=${file}">borrar</td></tr>`)
                 }
             }
         });
