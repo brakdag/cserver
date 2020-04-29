@@ -1,16 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSERVER</title>
+    <link rel="stylesheet" href="bootstrap/dist/css/boostrap.min.css">
 </head>
+
 <body>
-<table id="tabla">
-<th>
-    <td>hola</td>
-    <td>tito</td>
-</th>
-</table>    
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <table id="tabla">
+                    <tr>
+                        <th>Archivo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
 </body>
+<script src="jquery/dist/jquery.min.js"></script>
+<script src="bootstrap/dist/js/bootstraps.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: `/getlist`,
+            success: function (result) {
+                for (var file of result) {
+                    $("#tabla").append(`<tr><td>${file}</td><td><a href="convert?filename=${file}">convertir</a> |<a href="borrar?filename=${file}">borrar</td></tr>`)
+                }
+            }
+        });
+
+    });
+</script>
+
+<a href="http://" target="_blank" rel="noopener noreferrer"></a>
+
 </html>
