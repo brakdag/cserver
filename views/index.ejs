@@ -42,6 +42,7 @@
 
     function convertir(filename){
         $.ajax({
+            timeout: 10*60*1000,
             url: `/convert?filename=${filename}`,
             success: function (result) {
                 alert('convertido')
