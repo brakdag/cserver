@@ -38,8 +38,7 @@
         $.ajax({
             url: `/delfile?filename=${filename}`,
             success: function (result) {
-                alert('borrado')
-                location.reload(); 
+            location.reload(); 
             }});
     }
 
@@ -48,8 +47,7 @@
             timeout: 600000,
             url: `/convert?filename=${filename}`,
             success: function (result) {
-                alert('convertido')
-                location.reload(); 
+            location.reload(); 
             }});
     }
 
@@ -59,7 +57,6 @@
             url: `/getstatus`,
             success: function (result) {
                $("#out").text(`${result}`)
-
                }});   
     }
 
