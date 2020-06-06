@@ -68,7 +68,10 @@
             url: `/getlist`,
             success: function (result) {
                 for (var file of result) {
+                    var extension = file.split(".").pop()
+                    console.log(file,extension)
                     $("#tabla").append(`<tr><td>${file}</td><td><div class="btn-group"><button type="button" class="btn btn-outline-primary" onclick="convertir('${encodeURI(file)}')">convertir</button><button type="button" class="btn btn-outline-danger" onclick="borrar('${encodeURI(file)}')">borrar</button></div></td></tr>`)
+                
                 }
             }
         });
